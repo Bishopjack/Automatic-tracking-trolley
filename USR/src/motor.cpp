@@ -65,6 +65,7 @@ void Athletic::motor::init(PORT gpio_port,uint16_t gpio_pin)
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3,ENABLE);
 	
 	TIM_OCInitTypeDef TIM_OCInitStr;
+	TIM_OCInitStr.TIM_OCMode=TIM_OutputState_Enable;
 }
 
 Athletic::motor& Athletic::motor::operator=(const motor& machinery)
