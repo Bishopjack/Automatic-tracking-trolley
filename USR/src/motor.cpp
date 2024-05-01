@@ -67,11 +67,16 @@ void Athletic::motor::init(PORT gpio_port,uint16_t gpio_pin)
 	TIM_OCInitTypeDef TIM_OCInitStr;
 	TIM_OCInitStr.TIM_OCMode=TIM_OCMode_PWM1;
 	TIM_OCInitStr.TIM_OutputState=TIM_OutputState_Enable;
+<<<<<<< HEAD
 	TIM_OCInitStr.TIM_Pulse=0;
 	TIM_OCInitStr.TIM_OCPolarity=TIM_OCPolarity_High;
 	
 	
 	
+=======
+	TIM_OCInitStr.TIM_OCPolarity=TIM_OCPolarity_High;
+	TIM_OCInitStr.TIM_Pulse=0;
+>>>>>>> a2fc5873465a83b163bf8aa0e0927018ea41e1e2
 }
 
 Athletic::motor& Athletic::motor::operator=(const motor& machinery)
