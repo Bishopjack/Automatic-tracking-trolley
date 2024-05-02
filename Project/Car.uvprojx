@@ -424,6 +424,11 @@
               <FileType>8</FileType>
               <FilePath>..\USR\src\motor.cpp</FilePath>
             </File>
+            <File>
+              <FileName>time.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\USR\src\time.cpp</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
