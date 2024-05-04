@@ -420,14 +420,24 @@
               <FilePath>..\USR\main.cpp</FilePath>
             </File>
             <File>
+              <FileName>time.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\USR\src\time.cpp</FilePath>
+            </File>
+            <File>
               <FileName>motor.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>..\USR\src\motor.cpp</FilePath>
             </File>
             <File>
-              <FileName>time.cpp</FileName>
+              <FileName>travel.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>..\USR\src\time.cpp</FilePath>
+              <FilePath>..\USR\src\travel.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>NVIC_Conf.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\USR\src\NVIC_Conf.cpp</FilePath>
             </File>
           </Files>
         </Group>
