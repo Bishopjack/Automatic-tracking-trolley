@@ -14,7 +14,7 @@ namespace Athletic
 			travel(const travel& m);
 			travel& operator=(const travel& m);
 			~travel();
-			inline void run(unsigned int speed,short angle=0);
+			void run(unsigned int speed,short angle=0);
 		private:;
 			motor* motor1;
 			motor* motor2;

@@ -8,25 +8,25 @@ void Athletic::movement::motor::front(unsigned int speed)
 		case 1:
 		{
 			TIM_SetCompare1(TIM2,0);
-			TIM_SetCompare1(TIM4,0);
+			TIM_SetCompare1(TIM4,speed);
 			break;
 		}
 		case 2:
 		{
 			TIM_SetCompare2(TIM2,0);
-			TIM_SetCompare2(TIM4,0);
+			TIM_SetCompare2(TIM4,speed);
 			break;
 		}
 		case 3:
 		{
 			TIM_SetCompare3(TIM2,0);
-			TIM_SetCompare3(TIM4,0);
+			TIM_SetCompare3(TIM4,speed);
 			break;
 		}
 		case 4:
 		{
 			TIM_SetCompare4(TIM2,0);
-			TIM_SetCompare4(TIM4,0);
+			TIM_SetCompare4(TIM4,speed);
 			break;
 		}
 	}
@@ -37,25 +37,25 @@ void Athletic::movement::motor::back(unsigned int speed)
 	{
 		case 1:
 		{
-			TIM_SetCompare1(TIM2,0);
+			TIM_SetCompare1(TIM2,speed);
 			TIM_SetCompare1(TIM4,0);
 			break;
 		}
 		case 2:
 		{
-			TIM_SetCompare2(TIM2,0);
+			TIM_SetCompare2(TIM2,speed);
 			TIM_SetCompare2(TIM4,0);
 			break;
 		}
 		case 3:
 		{
-			TIM_SetCompare3(TIM2,0);
+			TIM_SetCompare3(TIM2,speed);
 			TIM_SetCompare3(TIM4,0);
 			break;
 		}
 		case 4:
 		{
-			TIM_SetCompare4(TIM2,0);
+			TIM_SetCompare4(TIM2,speed);
 			TIM_SetCompare4(TIM4,0);
 			break;
 		}
@@ -137,24 +137,6 @@ inline void Init_TIMOC4(void*& TIMx1,TIM_OCInitTypeDef& TIM_OCInitStr)
 }
 
 
-void Athletic::movement::motor::InitTIM(void* TIMx)
-{
-	//TIM time init
-	//1ms TIM
-	TIM_TimeBaseInitTypeDef TIM_TimeBaseStr;
-	
-	if(TIMx==TIM2)
-		RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2,ENABLE);
-	else if(TIMx==TIM4)
-		RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM4,ENABLE);
-	
-	TIM_TimeBaseStr.TIM_CounterMode=TIM_CounterMode_Up;
-	TIM_TimeBaseStr.TIM_ClockDivision=TIM_CKD_DIV1;
-	TIM_TimeBaseStr.TIM_Period=20000-1;
-	TIM_TimeBaseStr.TIM_Prescaler=2000-1;
-	TIM_TimeBaseInit(static_cast<TIM_TypeDef*>(TIMx),&TIM_TimeBaseStr);
-
-}
 void Athletic::movement::motor::InitTIM_OC(void* TIMx1=TIM2,void* TIMx2=TIM4)
 {
 	TIM_OCInitTypeDef TIM_OCInitStr;
@@ -168,25 +150,25 @@ void Athletic::movement::motor::InitTIM_OC(void* TIMx1=TIM2,void* TIMx2=TIM4)
 	
 	switch(initCount)
 	{
-		case 1:
+		case 0:
 		{
 			Init_TIMOC1(TIMx1,TIM_OCInitStr);
 			Init_TIMOC1(TIMx2,TIM_OCInitStr);
 		break;
 		}
-		case 2:
+		case 1:
 		{
 			Init_TIMOC2(TIMx1,TIM_OCInitStr);
 			Init_TIMOC2(TIMx2,TIM_OCInitStr);
 			break;
 		}
-		case 3:
+		case 2:
 		{
 			Init_TIMOC3(TIMx1,TIM_OCInitStr);
 			Init_TIMOC3(TIMx2,TIM_OCInitStr);
 			break;
 		}
-		case 4:
+		case 3:
 		{
 			Init_TIMOC4(TIMx1,TIM_OCInitStr);
 			Init_TIMOC4(TIMx2,TIM_OCInitStr);
@@ -224,7 +206,7 @@ bool Athletic::movement::motor::init(PWM& CH)
 	{
 		case CH1:
 		{			
-			gpio.GPIO_Pin=GPIO_Pin_6;
+			gpio.GPIO_Pin=GPIO_Pin_0;
 			RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA,ENABLE);
 			GPIO_Init(GPIOA,&gpio);
 			gpio.GPIO_Pin=GPIO_Pin_6;
@@ -234,7 +216,7 @@ bool Athletic::movement::motor::init(PWM& CH)
 		}
 		case CH2:
 		{			
-			gpio.GPIO_Pin=GPIO_Pin_7;
+			gpio.GPIO_Pin=GPIO_Pin_1;
 			RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA,ENABLE);
 			GPIO_Init(GPIOA,&gpio);
 			gpio.GPIO_Pin=GPIO_Pin_7;
@@ -244,7 +226,7 @@ bool Athletic::movement::motor::init(PWM& CH)
 		}
 		case CH3:
 		{			
-			gpio.GPIO_Pin=GPIO_Pin_0;
+			gpio.GPIO_Pin=GPIO_Pin_2;
 			RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA,ENABLE);
 			GPIO_Init(GPIOA,&gpio);
 			gpio.GPIO_Pin=GPIO_Pin_8;			
@@ -280,7 +262,7 @@ bool Athletic::movement::motor::init(PWM& CH)
 	
 	#ifndef TIM4_INIT
 	#define TIM4_INIT
-	this->resetTIM2();
+	this->resetTIM4();
 	#else
 		if(!Init)
 			Athletic::motor::motor_pwm::InitTIM_OC();
@@ -297,29 +279,12 @@ Athletic::movement::motor::~motor()
 
 inline void Athletic::movement::motor::resetTIM2()
 {
-	Athletic::movement::motor::InitTIM(TIM2);
+	Athletic::movement::motor::InitTIM2();
 	Athletic::movement::motor::InitTIM_OC();
 }
 
 inline void Athletic::movement::motor::resetTIM4()
 {
-	Athletic::movement::motor::InitTIM(TIM4);
+	Athletic::movement::motor::InitTIM4();
 	Athletic::movement::motor::InitTIM_OC();
-}
-
-
-extern "C" void TIM2_IRQHandler(void)
-{
-	if(TIM_GetITStatus(TIM2,TIM_IT_Update)!=RESET)
-	{
-		TIM_ClearITPendingBit(TIM2,TIM_IT_Update);
-	}
-}
-
-extern "C" void TIM4_IRQHandler(void)
-{
-	if(TIM_GetITStatus(TIM4,TIM_IT_Update)!=RESET)
-	{
-		TIM_ClearITPendingBit(TIM4,TIM_IT_Update);
-	}
 }

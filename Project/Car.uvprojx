@@ -439,6 +439,21 @@
               <FileType>8</FileType>
               <FilePath>..\USR\src\NVIC_Conf.cpp</FilePath>
             </File>
+            <File>
+              <FileName>myus.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\USR\src\myus.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>pwm.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\USR\src\pwm.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>delay.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\USR\src\delay.cpp</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

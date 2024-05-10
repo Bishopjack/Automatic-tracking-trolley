@@ -1,11 +1,12 @@
 #ifndef _MOTOR_H
 #define _MOTOR_H
+#include"time.h"
 
 namespace Athletic
 {
 	namespace movement
 	{
-		class motor{
+		class motor:public time_conf::TIM::TIM_INIT{
 		public:
 			
 			motor();
@@ -19,7 +20,7 @@ namespace Athletic
 			inline void resetTIM2();
 			inline void resetTIM4();
 		private:
-			static void InitTIM(void* TIMx);
+			//static void InitTIM4();
 			static void InitTIM_OC(void* TIMx1,void* TIMx2);
 			bool init(PWM& CH);
 			static int initCount;
