@@ -454,6 +454,46 @@
               <FileType>8</FileType>
               <FilePath>..\USR\src\delay.cpp</FilePath>
             </File>
+            <File>
+              <FileName>speedtest.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\USR\src\speedtest.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>standint.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\USR\src\standint.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>EXTI_IRQHandler.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\USR\src\EXTI_IRQHandler.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>TIM_IRQHandler.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\USR\src\TIM_IRQHandler.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>EXTI_Conf.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\USR\src\EXTI_Conf.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Infrared.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\USR\src\Infrared.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>vector.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\USR\src\vector.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>movement.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\USR\src\movement.cpp</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

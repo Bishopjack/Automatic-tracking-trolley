@@ -58,8 +58,8 @@ void time_conf::TIM::TIM_INIT::InitTIM2()
 	
 	TIM_TimeBaseStr.TIM_CounterMode=TIM_CounterMode_Up;
 	TIM_TimeBaseStr.TIM_ClockDivision=TIM_CKD_DIV1;
-	TIM_TimeBaseStr.TIM_Period=10000-1;
-	TIM_TimeBaseStr.TIM_Prescaler=3600-1;
+	TIM_TimeBaseStr.TIM_Period=1000-1;
+	TIM_TimeBaseStr.TIM_Prescaler=360-1;
 	TIM_TimeBaseStr.TIM_RepetitionCounter=0;
 	TIM_TimeBaseInit(TIM2,&TIM_TimeBaseStr);
 	#endif
@@ -77,8 +77,8 @@ void time_conf::TIM::TIM_INIT::InitTIM4()
 	
 	TIM_TimeBaseStr.TIM_CounterMode=TIM_CounterMode_Up;
 	TIM_TimeBaseStr.TIM_ClockDivision=TIM_CKD_DIV1;
-	TIM_TimeBaseStr.TIM_Period=10000-1;
-	TIM_TimeBaseStr.TIM_Prescaler=3600-1;
+	TIM_TimeBaseStr.TIM_Period=1000-1;
+	TIM_TimeBaseStr.TIM_Prescaler=360-1;
 	TIM_TimeBaseStr.TIM_RepetitionCounter=0;
 	TIM_TimeBaseInit(TIM4,&TIM_TimeBaseStr);
 

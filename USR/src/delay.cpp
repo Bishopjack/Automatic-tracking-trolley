@@ -1,9 +1,9 @@
 #include"delay.h"
 #include"stm32f10x.h"
+#include"time.h"
 
 time::uint8_t time::delay::fac_us=0;
 time::uint16_t time::delay::fac_ms=0;
-
 
 time::delay::delay()
 {

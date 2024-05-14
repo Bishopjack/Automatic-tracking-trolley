@@ -1,14 +1,10 @@
 #ifndef _DELAY_H
 #define _DELAY_H
-#include"time.h"
+#include"standint.h"
 
 namespace time
 {
-	typedef unsigned char uint8_t;
-	typedef unsigned short int uint16_t;
-	typedef unsigned int uint32_t;
-	
-	class delay:public time_conf::TIM::TIM_INIT
+	class delay
 	{
 	public:
 		delay();

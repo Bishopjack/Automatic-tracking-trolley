@@ -15,32 +15,36 @@ void Athletic::movement::travel::run(unsigned int speed,short angle)
 {
 	if(angle>=0 and angle<90)
 	{
-		this->motor1->front(speed);
-		this->motor2->front(speed);
-		this->motor3->front(speed);
-		this->motor4->front(speed);
+		this->motor1->front();
+		this->motor2->front();
+		this->motor3->front();
+		this->motor4->front();
 	}
 	else if(angle>=90 and angle <180)
 	{
-		this->motor1->front(speed);
-		this->motor2->front(speed);
-		this->motor3->front(speed);
-		this->motor4->front(speed);
+		this->motor1->front();
+		this->motor2->front();
+		this->motor3->front();
+		this->motor4->front();
 	}
 	else if(angle>=180 and angle <270)
 	{
-		this->motor1->back(speed);
-		this->motor2->back(speed);
-		this->motor3->back(speed);
-		this->motor4->back(speed);
+		this->motor1->back();
+		this->motor2->back();
+		this->motor3->back();
+		this->motor4->back();
 	}
 	else if(angle>=270 and angle <360)
 	{
-		this->motor1->back(speed);
-		this->motor2->back(speed);
-		this->motor3->back(speed);
-		this->motor4->back(speed);
-	}		
+		this->motor1->back();
+		this->motor2->back();
+		this->motor3->back();
+		this->motor4->back();
+	}
+	this->motor1->set_rate(speed);
+	this->motor2->set_rate(speed);
+	this->motor3->set_rate(speed);
+	this->motor4->set_rate(speed);
 }
 
 Athletic::movement::travel::~travel()
